@@ -1,7 +1,14 @@
 # application/ports/platform_adapter.py
 from abc import abstractmethod, ABC
 
-class IMessageReciver(ABC):
+class IMessageReceiver(ABC):
+    # @abstractmethod
+    # def _register_events(self):
+    #     ...
+    ...
+
+
+class IMessageSender(ABC):
 
     @abstractmethod
     async def send_message(self, chat_id: int, text: str) -> None:
@@ -11,19 +18,6 @@ class IMessageReciver(ABC):
     # async def send_reaction(self, chat_id: int, message_id: int) -> None:
     #     ...
 
-    @abstractmethod
-    async def typing_status(self, chat_id) -> None:
-        ...
-
-
-class IMessageSender(ABC):
-
-    @abstractmethod
-    async def start(self) -> None:
-        ...
-    
-    @abstractmethod
-    async def stop(self) -> None:
-        ...
-
-    
+    # @abstractmethod
+    # async def typing_status(self, chat_id) -> None:
+    #     ...
